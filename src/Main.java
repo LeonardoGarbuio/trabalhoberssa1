@@ -1,4 +1,3 @@
-
 /*
 * Autor: Leonardo Garbuio Cavalheiro
 * Linguagem: Java
@@ -7,42 +6,42 @@
 * Funcionalidades: ler 4 valores analisalos e exibir uma mensagem dependendo das suas respostas se voce pode ou nao andar na MontanhaRussa
 * Versão: 1.0
 */
-import java.util.Scanner;  // Importa a classe Scanner para leitura de dados do usuário
 
-public class Main {  // Define a classe principal do programa
-    public static void main(String[] args) {  // Método principal que é executado ao rodar o programa
-        java.io.PrintStream out = System.out;  // Cria uma referência ao fluxo de saída para facilitar a impressão de mensagens
-        Scanner scanner = new Scanner(System.in);  // Cria um objeto Scanner para ler dados do teclado
+import java.util.Scanner;  // importa Scanner para ler os dados do usuario
 
-        float P = 0;  // Declara a variável P (peso) como um número de ponto flutuante e inicializa com 0
-        float A = 0;  // Declara a variável A (altura) como um número de ponto flutuante e inicializa com 0
-        int I = 0;  // Declara a variável I (idade) como um inteiro e inicializa com 0
-        String[] N = new String[2];  // Declara um array de Strings N de tamanho 2 para armazenar os nomes de duas pessoas
+public class Main {  // classe principal
+    public static void main(String[] args) {  // metodo principal que é executado ao rodar o programa
+        java.io.PrintStream out = System.out;  // cria uma referência ao fluxo de saída para facilitar a impressão de mensagens
+        Scanner scanner = new Scanner(System.in);  // cria um objeto Scanner para ler dados do teclado
 
-        for (int i = 0; i < 2; i++){  // Inicia um loop que irá rodar duas vezes, uma para cada pessoa
-            out.println("Digite seu nome: ");  // Exibe a mensagem pedindo o nome do usuário
-            N[i] = scanner.nextLine();  // Lê o nome do usuário e armazena no array N na posição i
+        float P = 0;  // declara a variável P como um numero de ponto flutuante
+        float A = 0;  // declara a variável A como um numero de ponto flutuante
+        int I = 0;  // declara a variável I como um inteiro
+        String[] N = new String[2];  // declara um array de Strings N de tamanho 2 para armazenar o nome de duas pessoas
 
-            out.println("Digite sua Idade: ");  // Exibe a mensagem pedindo a idade do usuário
-            I = scanner.nextInt();  // Lê a idade do usuário e armazena em I
+        for (int i = 0; i < 2; i++){  // inicia um loop que roda 2 vezes uma para cada pessoa
+            out.println("Digite seu nome: ");  // entrada pede o nome do usuario
+            N[i] = scanner.nextLine();  // le e armazena o nome do usuario
 
-            out.println("Digite sua Altura: ");  // Exibe a mensagem pedindo a altura do usuário
-            A = scanner.nextFloat();  // Lê a altura do usuário e armazena em A
+            out.println("Digite sua Idade: ");  // entrada pede a idade do usuario
+            I = scanner.nextInt();  // le e armazena a idade do usuario dentro do I
 
-            out.println("Digite seu Peso: ");  // Exibe a mensagem pedindo o peso do usuário
-            P = scanner.nextFloat();  // Lê o peso do usuário e armazena em P
+            out.println("Digite sua Altura: ");  // entrada pede a altura do usuario
+            A = scanner.nextFloat();  // le e armazena a altura do usuario dentro do A
 
-            scanner.nextLine();  // Limpa o buffer do scanner (importante após ler um número para garantir que a próxima leitura funcione corretamente)
+            out.println("Digite seu Peso: ");  // entrada pede o peso do usuario
+            P = scanner.nextFloat();  // le e armazena o peso do usuario dentro do  P
 
-            // Condicional que verifica se a pessoa pode ou não ir à montanha-russa
-            if (I >= 14 && A >= 1.60 && P <= 80) {  // Se a idade for maior ou igual a 14, a altura for maior ou igual a 1,60m e o peso for menor ou igual a 80kg
-                System.out.print(N[i] + " pode andar na Montanha Russa.");  // Se a pessoa atender aos requisitos, exibe que ela pode andar na montanha-russa
-            } else {  // Caso contrário
-                System.out.print(N[i] + " não pode andar na Montanha Russa.");  // Exibe que a pessoa não pode andar na montanha-russa
+            scanner.nextLine();  // limpa o scanner para dar espaço entre as duas mensagens
+
+            //condição verifica se voce pode ou nao ir a MontanhaRussa
+            if (I >= 14 && A >= 1.60 && P <= 80) {  //se o usuario tiver menos de 14 anos se altura for maior ou igual a 1,60m e se o peso for menor ou igual a 80kg voce pode ir 
+                System.out.print(N[i] + " pode andar na Montanha Russa.");  // se o usuario atender aos requisitos pode ir na MontanhaRussa
+            } else {  // se o usuario tiver menos de 14 anos tiver menos de 1,60 ou se for mais pesada doq 80kg ela nao podera ir 
+                System.out.print(N[i] + " não pode andar na Montanha Russa.");  // saiba exibi que a pessoa nao pode andar na MontanhaRussa
             }
         }
 
-        scanner.close();  // Fecha o scanner para liberar o recurso de leitura após o uso
+        scanner.close();  // Fecha o scanner 
     }
 }
-
